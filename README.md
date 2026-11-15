@@ -29,3 +29,31 @@ This repository hosts content manifests and update assets for Custom Launcher. I
 - [Disclaimer](DISCLAIMER.md)
 
 This project is independent and is not an official Minecraft product. It is not approved by or associated with Mojang or Microsoft.
+
+
+## Application screenshots
+
+The following screenshots show the current development version of Custom Launcher.
+
+### Home and installation status
+
+![Custom Launcher Home](screenshots/home.png)
+
+### Game installation and launch controls
+
+![Installation and Launch](screenshots/installation.png)
+
+### Memory and display settings
+
+![Launcher Settings](screenshots/settings.png)
+
+### Shaders and resource packs
+
+![Resource Catalog](screenshots/resources.png)
+
+## Development notice
+
+The launcher is currently under active development.
+Microsoft account authentication is pending implementation
+and Minecraft API authorization.
+
