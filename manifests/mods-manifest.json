@@ -16,7 +16,42 @@
       "size": 2453884,
       "required": true,
       "dependencies": []
+    },
+    {
+      "id": "sodium",
+      "name": "Sodium",
+      "provider": "modrinth",
+      "project_id": "AANobbMI",
+      "version_id": "SMxNOGZ6",
+      "version": "mc1.21.1-0.8.13-fabric",
+      "file_name": "sodium-fabric-0.8.13+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/AANobbMI/versions/SMxNOGZ6/sodium-fabric-0.8.13%2Bmc1.21.1.jar",
+      "sha256": "3d43c14985a4deb19c654aad3393b454cf57e1ebcbba86c4ae6a98dfc60eca2d",
+      "size": 1574609,
+      "required": true,
+      "dependencies": []
+    },
+    {
+      "id": "iris",
+      "name": "Iris Shaders",
+      "provider": "modrinth",
+      "project_id": "YL57xq9U",
+      "version_id": "bAo1Qhte",
+      "version": "1.8.14-beta.1+1.21.1-fabric",
+      "file_name": "iris-fabric-1.8.14-beta.1+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/YL57xq9U/versions/bAo1Qhte/iris-fabric-1.8.14-beta.1%2Bmc1.21.1.jar",
+      "sha256": "0ceb694040b4628bf3fa02286cfe5f0db833195669ab07f8caa4001359763eff",
+      "size": 2791343,
+      "required": true,
+      "dependencies": [
+        {
+          "version_id": "SMxNOGZ6",
+          "project_id": "AANobbMI",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ]
     }
   ],
-  "revision": 1
+  "revision": 2
 }

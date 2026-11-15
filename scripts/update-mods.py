@@ -67,6 +67,19 @@ def resolve(mod, config):
     return {'id': mod['id'], 'name': mod['name'], 'provider': 'modrinth', 'project_id': version['project_id'], 'version_id': version['id'], 'version': version['version_number'], 'file_name': name, 'url': url, 'sha256': sha256.hexdigest(), 'size': size, 'required': mod['required'], 'dependencies': [d for d in version.get('dependencies', []) if d['dependency_type'] == 'required']}
 
 
+def validate_dependencies(mods):
+    for mod in mods:
+        for dep in mod['dependencies']:
+            project = dep.get('project_id')
+            version = dep.get('version_id')
+            if not project and not version:
+                raise ValueError('Dependencia sin identificador: ' + mod['name'])
+            matches = [m for m in mods if m['required'] and (not project or m['project_id'] == project) and (not version or m['version_id'] == version)]
+            if not matches:
+                raise ValueError(f"Dependencia no satisfecha: {mod['name']} requiere proyecto {project}, version {version}")
+            print('Dependencia satisfecha:', mod['name'], '->', matches[0]['name'])
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--approve', action='store_true', help='Aprobar el manifiesto propuesto existente')
@@ -79,8 +92,7 @@ def main():
         enabled = {m['id'] for m in config['mods'] if m['enabled']}
         if data['minecraft_version'] != config['minecraft_version'] or data['mod_loader'] != config['mod_loader'] or {m['id'] for m in data['mods']} != enabled:
             raise ValueError('La propuesta no coincide con la configuracion actual')
-        if any(m['dependencies'] for m in data['mods']):
-            raise ValueError('Hay dependencias requeridas pendientes de resolver')
+        validate_dependencies(data['mods'])
         old = read_json(approved) if approved.exists() else {}
         data['revision'] = old.get('revision', 0) + 1
         save_json(approved, data)
@@ -95,6 +107,7 @@ def main():
     data = {'manifest_version': 1, 'minecraft_version': config['minecraft_version'], 'mod_loader': config['mod_loader'], 'mods': mods}
     save_json(proposed, data)
     print('Propuesta generada:', proposed)
+    validate_dependencies(mods)
     print('Revisa la propuesta antes de aprobarla con --approve.')
 
 

@@ -12,6 +12,26 @@
       "required": true,
       "release_channel": "release",
       "update_mode": "manual"
+    },
+    {
+      "id": "sodium",
+      "name": "Sodium",
+      "provider": "modrinth",
+      "project_id": "AANobbMI",
+      "enabled": true,
+      "required": true,
+      "release_channel": "release",
+      "update_mode": "manual"
+    },
+    {
+      "id": "iris",
+      "name": "Iris Shaders",
+      "provider": "modrinth",
+      "project_id": "YL57xq9U",
+      "enabled": true,
+      "required": true,
+      "release_channel": "release",
+      "update_mode": "manual"
     }
   ]
 }
