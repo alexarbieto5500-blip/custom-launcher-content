@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "minecraft_version": "1.21.1",
+  "mod_loader": "fabric",
+  "resources": [
+    {
+      "id": "complementary-reimagined",
+      "name": "Complementary Reimagined",
+      "kind": "shader",
+      "provider": "modrinth",
+      "project_id": "complementary-reimagined",
+      "loaders": [
+        "iris"
+      ],
+      "enabled": true,
+      "required": false,
+      "release_channel": "release",
+      "update_mode": "manual"
+    },
+    {
+      "id": "faithful-32x",
+      "name": "Faithful 32x",
+      "kind": "resourcepack",
+      "provider": "modrinth",
+      "project_id": "faithful-32x",
+      "loaders": [
+        "minecraft"
+      ],
+      "enabled": true,
+      "required": false,
+      "release_channel": "release",
+      "update_mode": "manual"
+    }
+  ]
+}

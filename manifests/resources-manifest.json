@@ -1,0 +1,40 @@
+{
+  "manifest_version": 1,
+  "minecraft_version": "1.21.1",
+  "mod_loader": "fabric",
+  "resources": [
+    {
+      "id": "complementary-reimagined",
+      "kind": "shader",
+      "name": "Complementary Reimagined",
+      "provider": "modrinth",
+      "project_id": "HVnmMxH1",
+      "version_id": "Bqen1mJX",
+      "version": "r5.9.3",
+      "file_name": "ComplementaryReimagined_r5.9.3.zip",
+      "url": "https://cdn.modrinth.com/data/HVnmMxH1/versions/Bqen1mJX/ComplementaryReimagined_r5.9.3.zip",
+      "sha512": "45304b1d7862afdb2177b7e6226fc9c6737911d17a4ad46cc9c519ca4deb935f05072cd337cd8b19a15bb8062b57b54eceec7bdee4cd572d94858e2946d37d85",
+      "sha256": "fed6c879e732cf7fc7bc6570ebb1def43235aa7e96f62859fbdbdbfa0b484b38",
+      "size": 553397,
+      "required": false,
+      "dependencies": []
+    },
+    {
+      "id": "faithful-32x",
+      "kind": "resourcepack",
+      "name": "Faithful 32x",
+      "provider": "modrinth",
+      "project_id": "w0TnApzs",
+      "version_id": "ruZOIEZE",
+      "version": "1.21.1-june-2026",
+      "file_name": "Faithful 32x - 1.21.1.zip",
+      "url": "https://cdn.modrinth.com/data/w0TnApzs/versions/ruZOIEZE/Faithful%2032x%20-%201.21.1.zip",
+      "sha512": "5ceaff9539f1440434a7255a5ede1118b00491f85db5c414fb4463872bd041a590e84275daa3bfaecd52772967f114d09c53dc97070e6d3959752f31d4a63885",
+      "sha256": "15e093da38af37e11531c6cfeb9787f5617c20009c68b789eb62cfafe53c2762",
+      "size": 11030261,
+      "required": false,
+      "dependencies": []
+    }
+  ],
+  "revision": 1
+}
