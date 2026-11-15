@@ -1,0 +1,43 @@
+name: Buscar actualizaciones de mods
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-mods
+  cancel-in-progress: false
+
+jobs:
+  update-mods:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Consultar Modrinth
+        run: python scripts/update-mods.py
+
+      - name: Guardar propuesta
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add manifests/mods-proposed.json
+
+          if git diff --cached --quiet; then
+            echo "No hay nuevas actualizaciones."
+          else
+            git commit -m "Actualizar propuesta de mods"
+            git push
+          fi
